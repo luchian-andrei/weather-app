@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+:root {
+  --first-color: #c7f9f0;
+  --second-color: #f8e8a2;
+  --third-color: #e4857d;
+  --fourth-color: #52617d;
+  --fifth-color: #181415;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-align: center;
+  background-color: var(--first-color);
 }
 
-.App-link {
-  color: #61dafb;
+.Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* display: grid;
+  grid-template-rows: 1fr 1fr; */
+  padding: 20px;
+  width: 600px;
+  margin: 5vw;
+  border-radius: 15px;
+  background-color: var(--third-color);
+  color: var(--fifth-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.SearchBar {
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.SearchBar input {
+  border-radius: 10px;
+  padding: 5px;
+  width: 60%;
+  height: 40px;
+  border: 1px solid lightblue;
+}
+
+.SearchBar button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.SearchBar button:hover {
+  opacity: 0.7;
+}
+
+.Icon {
+  font-size: 20px;
+}
+
+.description {
+  /* margin-bottom: 10px; */
+  font-style: italic;
+}
+
+/* .weather-icon {
+  padding: 10px;
+} */
+
+.Info {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  margin-bottom: 20px;
+}
+
+.first-row {
+  display: flex;
+  justify-content: space-around;
+  /* margin: 10px; */
+}
+
+.second-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 5px;
+  border: 2px solid purple;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: var(--first-color);
+}
+
+.card p {
+  font-size: 20px;
+}
+
+/* .RandomMessage {
+  padding: 20px;
+}
+
+.RandomMessage p {
+  margin: 10px;
+} */
+
+@media (max-width: 500px) {
+  .Wrapper {
+    width: 300px;
   }
 }

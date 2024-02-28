@@ -1,3 +1,11 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faWind,
+  faTemperatureArrowDown,
+  faTemperatureArrowUp,
+  faTemperatureFull,
+} from "@fortawesome/free-solid-svg-icons";
+
 export default function Info({
   loading,
   temp,
@@ -8,11 +16,58 @@ export default function Info({
 }) {
   return (
     <div className="Info">
-      <p>{Math.round(temp)} °C </p>
-      <p>{Math.round(windSpeed)} km/h </p>
-      <p>{Math.round(maxTemp)} °C</p>
-      <p>{Math.round(minTemp)} °C</p>
-      <p>{Math.round(feelsLike)} °C</p>
+      <div className="first-row">
+        <div className="card">
+          <span>Temperature</span>
+          <p>
+            {" "}
+            <FontAwesomeIcon
+              icon={faTemperatureFull}
+              style={{ color: "red" }}
+            />
+          </p>
+
+          <p>{Math.round(temp)} °C </p>
+        </div>
+        <div className="card">
+          {" "}
+          <span>Wind speed</span>
+          <p>
+            <FontAwesomeIcon icon={faWind} style={{ color: "gray" }} />
+          </p>
+          <p>{Math.round(windSpeed)} km/h </p>
+        </div>
+      </div>
+      <div className="second-row">
+        <div className="card">
+          <p>{Math.round(maxTemp)} °C</p>
+          <p>
+            {" "}
+            <FontAwesomeIcon
+              icon={faTemperatureArrowUp}
+              style={{ color: "orangered" }}
+            />
+          </p>
+          <span>Max. temp</span>
+        </div>
+
+        <div className="card">
+          <p>{Math.round(feelsLike)} °C</p>
+          <p>Feels like </p>
+        </div>
+
+        <div className="card">
+          <p>{Math.round(minTemp)} °C</p>
+          <p>
+            {" "}
+            <FontAwesomeIcon
+              icon={faTemperatureArrowDown}
+              style={{ color: "blue" }}
+            />
+          </p>
+          <span>Min. temp</span>
+        </div>
+      </div>
     </div>
   );
 }

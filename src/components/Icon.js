@@ -5,18 +5,15 @@ import {
   faSun,
   faUmbrella,
   faSnowflake,
-  faCloudRain,
+  faBolt,
   faCloudSun,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
-export default function Icon({ sky, skyDescription }) {
-  const [funMessage, setFunMessage] = useState("");
+export default function Icon({ sky, skyDescription, cityName }) {
   const [icon, setIcon] = useState();
-  // <FontAwesomeIcon
-  //   icon={faSun}
-  //   style={{ color: "yellow", fontSize: "100px" }}
-  // />
+
+  console.log(cityName);
 
   function handleIcons() {
     if (sky === "Clouds") {
@@ -47,6 +44,27 @@ export default function Icon({ sky, skyDescription }) {
           style={{ color: "lightgray", fontSize: "100px" }}
         />
       );
+    } else if (sky === "Rain" || "Shower rain") {
+      setIcon(
+        <FontAwesomeIcon
+          icon={faUmbrella}
+          style={{ color: "purple", fontSize: "100px" }}
+        />
+      );
+    } else if (sky === "Thunderstorm") {
+      setIcon(
+        <FontAwesomeIcon
+          icon={faBolt}
+          style={{ color: "yellow", fontSize: "100px" }}
+        />
+      );
+    } else if (sky === "Snow") {
+      setIcon(
+        <FontAwesomeIcon
+          icon={faSnowflake}
+          style={{ color: "lightblue", fontSize: "100px" }}
+        />
+      );
     }
   }
 
@@ -56,9 +74,12 @@ export default function Icon({ sky, skyDescription }) {
 
   return (
     <div className="Icon">
-      {icon}
-      <p>{sky} </p>
-      <p>{skyDescription} </p>
+      {<p className="weather-icon">{icon}</p>}
+
+      <p className="description">
+        {<p style={{ color: "yellow", fontWeight: "bold" }}>{cityName} </p>} "{" "}
+        {skyDescription}"{" "}
+      </p>
     </div>
   );
 }

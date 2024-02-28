@@ -5,7 +5,7 @@ import Info from "./Info";
 import { useState, useEffect } from "react";
 
 export default function Wrapper() {
-  const [cityName, setCityName] = useState("New York");
+  const [cityName, setCityName] = useState("Bucharest");
   const [loading, setLoading] = useState(false);
   const [sky, setSky] = useState("");
   const [skyDescription, setSkyDescription] = useState("");
@@ -36,9 +36,6 @@ export default function Wrapper() {
     setFeelsLike(data.main.feels_like);
   }
 
-  console.log("sky is " + sky);
-  console.log("description " + skyDescription);
-
   useEffect(() => {
     fetchData();
   }, [cityName]);
@@ -46,16 +43,25 @@ export default function Wrapper() {
   return (
     <div className="Wrapper">
       <SearchBar nameProvider={nameProvider} />
-      <Icon sky={sky} skyDescription={skyDescription} loading={loading} />
-      <RandomMessage loading={loading} />
-      <Info
-        loading={loading}
-        temp={temp}
-        windSpeed={windSpeed}
-        maxTemp={maxTemp}
-        minTemp={minTemp}
-        feelsLike={feelsLike}
-      />
+      <div className="icon.message-container">
+        <Icon
+          sky={sky}
+          skyDescription={skyDescription}
+          loading={loading}
+          cityName={cityName}
+        />
+        <RandomMessage loading={loading} cityName={cityName} />
+      </div>
+      <div className="info-container">
+        <Info
+          loading={loading}
+          temp={temp}
+          windSpeed={windSpeed}
+          maxTemp={maxTemp}
+          minTemp={minTemp}
+          feelsLike={feelsLike}
+        />
+      </div>
     </div>
   );
 }
