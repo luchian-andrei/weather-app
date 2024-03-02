@@ -109,8 +109,6 @@ export default function Icon({
     }
   }
 
-  console.log("sky is " + sky);
-
   useEffect(() => {
     handleIcons();
   }, [momentOfDay]);

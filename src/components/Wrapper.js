@@ -34,7 +34,6 @@ export default function Wrapper() {
         `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b3fa989ef13c5d36b959d542856ffdd3&units=metric`
       );
       const data = await response.json();
-      console.log(data);
 
       setLoading(false);
       setSky(data.weather[0].main);

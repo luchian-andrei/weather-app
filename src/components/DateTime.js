@@ -39,9 +39,6 @@ export default function DateTime({ timezone, handlePartOfDay }) {
     getLocalTime();
   }, [timezone]);
 
-  console.log("local time :" + shortLocalTime);
-  console.log("moment " + momentOfDay);
-
   return (
     <div className="DateTime">
       <FontAwesomeIcon className="clock-icon" icon={faClock} />
