@@ -17,8 +17,8 @@ export default function Info({
   return (
     <div className="Info">
       <div className="first-row">
-        <div className="card">
-          <span>Temperature</span>
+        <div className="card" id="temperature">
+          <span>Temp.</span>
           <p>
             {" "}
             <FontAwesomeIcon
@@ -29,9 +29,9 @@ export default function Info({
 
           <p>{Math.round(temp)} °C </p>
         </div>
-        <div className="card">
+        <div className="card " id="wind-speed">
           {" "}
-          <span>Wind speed</span>
+          <span>Wind </span>
           <p>
             <FontAwesomeIcon icon={faWind} style={{ color: "gray" }} />
           </p>
@@ -39,6 +39,12 @@ export default function Info({
         </div>
       </div>
       <div className="second-row">
+        <div className="card">
+          <p>{Math.round(feelsLike)} °C</p>
+          <span>Feels like </span>
+        </div>
+      </div>
+      <div className="third-row">
         <div className="card">
           <p>{Math.round(maxTemp)} °C</p>
           <p>
@@ -50,13 +56,7 @@ export default function Info({
           </p>
           <span>Max. temp</span>
         </div>
-
-        <div className="card">
-          <p>{Math.round(feelsLike)} °C</p>
-          <p>Feels like </p>
-        </div>
-
-        <div className="card">
+        <div className="card ">
           <p>{Math.round(minTemp)} °C</p>
           <p>
             {" "}

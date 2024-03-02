@@ -26,7 +26,8 @@ export default function Icon({
       setIcon(
         <FontAwesomeIcon
           icon={faCloud}
-          style={{ color: "lightblue", fontSize: "100px" }}
+          className="icon icon-cloud"
+          style={{ color: "lightblue" }}
         />
       );
     } else if (
@@ -36,7 +37,8 @@ export default function Icon({
       setIcon(
         <FontAwesomeIcon
           icon={faSun}
-          style={{ color: "yellow", fontSize: "100px" }}
+          className="icon icon-sun"
+          style={{ color: "yellow" }}
         />
       );
     } else if (
@@ -46,14 +48,16 @@ export default function Icon({
       setIcon(
         <FontAwesomeIcon
           icon={faMoon}
-          style={{ color: "whitesmoke", fontSize: "100px" }}
+          className="icon icon-moon"
+          style={{ color: "whitesmoke" }}
         />
       );
     } else if (sky === "Mist") {
       setIcon(
         <FontAwesomeIcon
           icon={faSmog}
-          style={{ color: "lightgray", fontSize: "100px" }}
+          className="icon icon-smog"
+          style={{ color: "lightgray" }}
         />
       );
     } else if (
@@ -63,7 +67,8 @@ export default function Icon({
       setIcon(
         <FontAwesomeIcon
           icon={faCloudSun}
-          style={{ color: "lightgray", fontSize: "100px" }}
+          className="icon icon-cloud-sun"
+          style={{ color: "lightgray" }}
         />
       );
     } else if (
@@ -73,28 +78,32 @@ export default function Icon({
       setIcon(
         <FontAwesomeIcon
           icon={faCloudMoon}
-          style={{ color: "whitesmoke", fontSize: "100px" }}
+          className="icon icon-cloud-moon"
+          style={{ color: "whitesmoke" }}
         />
       );
     } else if (sky === "Rain" || sky === "Shower rain") {
       setIcon(
         <FontAwesomeIcon
           icon={faCloudRain}
-          style={{ color: "lightblue", fontSize: "100px" }}
+          className="icon icon-cloud-rain"
+          style={{ color: "lightblue" }}
         />
       );
     } else if (sky === "Thunderstorm") {
       setIcon(
         <FontAwesomeIcon
           icon={faBolt}
-          style={{ color: "yellow", fontSize: "100px" }}
+          className="icon icon-bolt"
+          style={{ color: "yellow" }}
         />
       );
     } else if (sky === "Snow") {
       setIcon(
         <FontAwesomeIcon
           icon={faSnowflake}
-          style={{ color: "lightblue", fontSize: "100px" }}
+          className="icon icon-snowflake"
+          style={{ color: "lightblue" }}
         />
       );
     }
@@ -111,28 +120,14 @@ export default function Icon({
       {<p className="weather-icon">{icon}</p>}
 
       <div className="description">
-        {momentOfDay === "day " ? (
-          <p
-            style={{
-              color: "yellow",
-              fontWeight: "bold",
-              textTransform: "capitalize",
-            }}
-          >
-            {cityName}, {countryCode}{" "}
-          </p>
-        ) : (
-          <p
-            style={{
-              color: "whitesmoke",
-              fontWeight: "bold",
-              textTransform: "capitalize",
-            }}
-          >
-            {cityName}, {countryCode}{" "}
-          </p>
-        )}{" "}
-        " {skyDescription}"
+        <p
+          className={
+            momentOfDay === "day" ? "city-name-day" : "city-name-night"
+          }
+        >
+          {cityName}, {countryCode}{" "}
+        </p>
+        <p className="sky-description"> "{skyDescription}"</p>
       </div>
     </div>
   );

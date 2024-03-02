@@ -44,15 +44,12 @@ export default function DateTime({ timezone, handlePartOfDay }) {
 
   return (
     <div className="DateTime">
-      <FontAwesomeIcon
-        icon={faClock}
-        style={{ color: "whitesmoke", fontSize: "30px" }}
-      />
+      <FontAwesomeIcon className="clock-icon" icon={faClock} />
       <h2>
         {shortLocalTime < 10 ? `0${shortLocalTime}` : shortLocalTime} :{" "}
         {minutes < 10 ? `0${minutes}` : minutes}{" "}
       </h2>
-      <h3 style={{ textTransform: "capitalize" }}>{momentOfDay} </h3>
+      <h3>{momentOfDay} </h3>
     </div>
   );
 }

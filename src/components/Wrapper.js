@@ -81,21 +81,22 @@ export default function Wrapper() {
             <ErrorMessage />
           ) : (
             <>
-              <Icon
-                sky={sky}
-                skyDescription={skyDescription}
-                loading={loading}
-                cityName={cityName}
-                countryCode={countryCode}
-                errorMessage={errorMessage}
-                momentOfDay={momentOfDay}
-              />
-              <DateTime
-                timezone={timezone}
-                cityName={cityName}
-                handlePartOfDay={handlePartOfDay}
-              />
-
+              <div className="icon-container">
+                <Icon
+                  sky={sky}
+                  skyDescription={skyDescription}
+                  loading={loading}
+                  cityName={cityName}
+                  countryCode={countryCode}
+                  errorMessage={errorMessage}
+                  momentOfDay={momentOfDay}
+                />
+                <DateTime
+                  timezone={timezone}
+                  cityName={cityName}
+                  handlePartOfDay={handlePartOfDay}
+                />
+              </div>
               <Info
                 loading={loading}
                 temp={temp}
