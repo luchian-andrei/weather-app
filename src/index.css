@@ -1,0 +1,10 @@
+:root {
+  --body-background: white;
+}
+
+[data-theme="dark"] {
+}
+
+body {
+  background-color: var(--body-background);
+}
