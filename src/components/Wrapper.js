@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import DateTime from "./DateTime";
 
+const apiKey = "b3fa989ef13c5d36b959d542856ffdd3";
+
 export default function Wrapper() {
   const [cityName, setCityName] = useState("Bucharest");
   const [countryCode, setCountryCode] = useState("RO");
@@ -31,7 +33,7 @@ export default function Wrapper() {
     try {
       setLoading(true);
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b3fa989ef13c5d36b959d542856ffdd3&units=metric`
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
       );
       const data = await response.json();
 
