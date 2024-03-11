@@ -27,6 +27,7 @@ body {
 
 .Wrapper {
   width: 60vw;
+  height: 90vh;
   padding: 20px;
   margin: 5vh auto;
   display: flex;
@@ -70,6 +71,7 @@ body {
 
 .icon-container {
   width: 50%;
+  margin-right: -30px;
 }
 
 .Icon {
@@ -121,6 +123,7 @@ body {
   width: 50%;
   display: block;
   padding: 10px;
+  margin-left: -30px;
 }
 
 .card {
@@ -164,6 +167,7 @@ body {
     width: 80vw;
     height: 100vh;
     margin: 0;
+    border-radius: 0;
   }
   .Icon {
     margin-top: -20px;
@@ -176,6 +180,14 @@ body {
   .WeatherMessage {
     margin-top: -10px;
     padding: 0;
+  }
+
+  .icon-container {
+    margin-right: 0;
+  }
+
+  .Info {
+    margin-left: 0;
   }
 }
 
@@ -193,22 +205,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: -20px;
   }
 
   .WeatherMessage {
-    margin-top: 5px;
-    padding: 0;
+    padding: 20px;
+    margin-top: 20px;
   }
 
   .Info {
     width: 100%;
-    padding: 5px;
-  }
-
-  .card {
-    margin: 2.5px;
-    padding: 5px;
   }
 
   .icon {
@@ -216,12 +221,12 @@ body {
   }
 
   p {
-    font-size: 15px;
-  }
-  h2 {
     font-size: 20px;
   }
   h2 {
-    font-size: 15px;
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 25px;
   }
 }
