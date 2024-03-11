@@ -47,7 +47,7 @@ export default function WeatherMessage({ sky, momentOfDay, cityName }) {
         />
       );
     } else if (sky === "Mist") {
-      setMessage("Don`t forget to turn off the lights");
+      setMessage("Don`t forget to turn on the lights");
       setMessageIcon(
         <FontAwesomeIcon
           icon={faCarSide}
